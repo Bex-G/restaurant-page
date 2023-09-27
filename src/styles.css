@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'MyFont';
+    src: url('./myFont-2.woff') format('woff2'),
+      url('./myFont-1.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    background-color: rgb(35, 35, 35);
+    font-family: 'MyFont';
+    color: white;
+    font-size: 2rem;
+}
+
+#logoContainer {
+    margin: 50px;
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 4rem;
+}
+
+.logo img {
+    height: 80px;
+    filter: invert(100%);
+}
+
+#menuContainer {
+    display: flex;
+    justify-content: center;
+}
+
+.hotMenu, .icedMenu, .extraMenu {
+    display: grid;
+    grid-template-columns: 10fr 1fr 1fr;
+    align-items: center;
+    padding: 20px;
+    border: solid 1px rgb(200, 125, 50);
+}
+
+h3, .smallHot, .bigHot, .smallIced, .bigIced, .extraPrices {
+    text-align: center;
+    margin: 5px;
+}
