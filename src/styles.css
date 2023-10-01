@@ -1,3 +1,4 @@
+
 * {
     margin: 0;
     padding: 0;
@@ -19,38 +20,48 @@ body {
     font-family: 'MyFont';
     color: white;
     font-size: 2rem;
-}
+} 
 
-#logoContainer {
-    margin: 50px;
-}
-
-.logo {
+#logoContainer  {
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 4rem;
+    padding: 30px;
 }
 
-.logo img {
+img {
     height: 80px;
     filter: invert(100%);
+    padding: -20px;
 }
 
-#menuContainer {
+#parentContainer {
     display: flex;
     justify-content: center;
-}
-
-.hotMenu, .icedMenu, .extraMenu {
-    display: grid;
-    grid-template-columns: 10fr 1fr 1fr;
     align-items: center;
-    padding: 20px;
-    border: solid 1px rgb(200, 125, 50);
 }
 
-h3, .smallHot, .bigHot, .smallIced, .bigIced, .extraPrices {
-    text-align: center;
-    margin: 5px;
+#tableContainer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: stretch;
+    gap: 50px;
+    padding: 20px;
+    border: 1px solid goldenrod;
+    margin-bottom: 20px;
+    width: 90%;
+}
+
+th {
+    height: 50px;
+    color: goldenrod;
+}
+
+.row {
+    height: 50px;
+}
+
+.menu-size {
+    letter-spacing: .1rem;
 }
