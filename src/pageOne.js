@@ -28,27 +28,15 @@ const addOns = [
 
 const generatePageOne = function() {
 
-     // generate logo
-
-     const content = document.getElementById('content');
-    
-     const logoContainer = document.createElement('div');
-     logoContainer.setAttribute('id', 'logoContainer');
- 
-     const text1 = document.createTextNode ('Black ');
-     logoContainer.appendChild(text1); 
-     const image = document.createElement('img');
-     image.src  = '../src/icon.png';
-     image.setAttribute('class', 'logo');
-     logoContainer.appendChild(image);
-     const text2 = document.createTextNode ('at Café');
-     logoContainer.appendChild(text2);
-     content.appendChild(logoContainer);
-     
-     // add structure
+    const content = document.getElementById('content'); 
 
     const parentContainer = document.createElement('div');
     parentContainer.setAttribute('id', 'parentContainer');
+
+    const drinkMenu = document.createElement('h1');
+    drinkMenu.setAttribute('class', 'menu-name');
+    drinkMenu.textContent = 'LIBATIONS';
+    content.appendChild(drinkMenu);
 
     const tableContainer = document.createElement('div');
     tableContainer.setAttribute('id', 'tableContainer')
@@ -61,16 +49,13 @@ const generatePageOne = function() {
     const hotHeaderRow = document.createElement('tr');
     
     const hotHeader = document.createElement('th');
-    const hotHeaderText = document.createTextNode('served hot or iced');
-    hotHeader.appendChild(hotHeaderText);
+    hotHeader.textContent = ('served hot or iced');
 
     const smallHotHeader = document.createElement('th');
-    const smallHotHeaderText = document.createTextNode('12 oz');
-    smallHotHeader.appendChild(smallHotHeaderText);
+    smallHotHeader.textContent = ('12 oz');
 
     const largeHotHeader = document.createElement('th');
-    const largeHotHeaderText = document.createTextNode('16 oz');
-    largeHotHeader.appendChild(largeHotHeaderText);
+    largeHotHeader.textContent = ('16 oz');
 
     hotHeaderRow.appendChild(hotHeader);
     hotHeaderRow.appendChild(smallHotHeader);
@@ -84,18 +69,15 @@ const generatePageOne = function() {
     
         let newCell1 = newRow.insertCell();
         newCell1.setAttribute('class', 'menu-item');
-        let newText1 = document.createTextNode(hotDrinks[i].item);
-        newCell1.appendChild(newText1);
+        newCell1.textContent = (hotDrinks[i].item);
         
         let newCell2 = newRow.insertCell();
         newCell2.setAttribute('class', 'menu-size');
-        let newText2 = document.createTextNode(hotDrinks[i].small);
-        newCell2.appendChild(newText2);
+        newCell2.textContent = (hotDrinks[i].small);
 
         let newCell3 = newRow.insertCell();
         newCell3.setAttribute('class', 'menu-size');
-        let newText3 = document.createTextNode(hotDrinks[i].large);
-        newCell3.appendChild(newText3);
+        newCell3.textContent = (hotDrinks[i].large);
     };
 
     tableContainer.appendChild(hotTable);
@@ -108,42 +90,36 @@ const generatePageOne = function() {
      const icedHeaderRow = document.createElement('tr');
      
      const icedHeader = document.createElement('th');
-     const icedHeaderText = document.createTextNode('served over ice');
-     icedHeader.appendChild(icedHeaderText);
+     icedHeader.textContent = ('served over ice');
  
      const smallIcedHeader = document.createElement('th');
-     const smallIcedHeaderText = document.createTextNode('12 oz');
-     smallIcedHeader.appendChild(smallIcedHeaderText);
+     smallIcedHeader.textContent = ('12 oz');
  
      const largeIcedHeader = document.createElement('th');
-     const largeIcedHeaderText = document.createTextNode('16 oz');
-     largeIcedHeader.appendChild(largeIcedHeaderText);
- 
+     largeIcedHeader.textContent = ('16 oz');
+
      icedHeaderRow.appendChild(icedHeader);
      icedHeaderRow.appendChild(smallIcedHeader);
      icedHeaderRow.appendChild(largeIcedHeader);
      icedTable.appendChild(icedHeaderRow);
      
      for (let i = 0; i < icedDrinks.length; i++) {
-         let newRow = icedTable.insertRow();
-         newRow.setAttribute('id', [i]);
-         newRow.setAttribute('class', 'row');
-     
-         let newCell1 = newRow.insertCell();
-         newCell1.setAttribute('class', 'menu-item');
-         let newText1 = document.createTextNode(icedDrinks[i].item);
-         newCell1.appendChild(newText1);
-         
-         let newCell2 = newRow.insertCell();
-         newCell2.setAttribute('class', 'menu-size');
-         let newText2 = document.createTextNode(icedDrinks[i].small);
-         newCell2.appendChild(newText2);
- 
-         let newCell3 = newRow.insertCell();
-         newCell3.setAttribute('class', 'menu-size');
-         let newText3 = document.createTextNode(icedDrinks[i].large);
-         newCell3.appendChild(newText3);
-     };
+        let newRow = icedTable.insertRow();
+        newRow.setAttribute('id', [i]);
+        newRow.setAttribute('class', 'row');
+    
+        let newCell1 = newRow.insertCell();
+        newCell1.setAttribute('class', 'menu-item');
+        newCell1.textContent = (icedDrinks[i].item);
+        
+        let newCell2 = newRow.insertCell();
+        newCell2.setAttribute('class', 'menu-size');
+        newCell2.textContent = (icedDrinks[i].small);
+
+        let newCell3 = newRow.insertCell();
+        newCell3.setAttribute('class', 'menu-size');
+        newCell3.textContent = (icedDrinks[i].large);
+    };
  
      tableContainer.appendChild(icedTable);
  
@@ -152,8 +128,7 @@ const generatePageOne = function() {
      const espressoHeaderRow = document.createElement('tr');
     
      const espressoHeader = document.createElement('th');
-     const espressoHeaderText = document.createTextNode('keep it classic');
-     espressoHeader.appendChild(espressoHeaderText);
+     espressoHeader.textContent = ('keep it classic');
 
     const espressoTable = document.createElement('table');
     espressoTable.setAttribute('id', 'espressoTable');
@@ -168,13 +143,11 @@ const generatePageOne = function() {
     
         let newCell1 = newRow.insertCell();
         newCell1.setAttribute('class', 'menu-item');
-        let newText1 = document.createTextNode(espressoDrinks[i].item);
-        newCell1.appendChild(newText1);
+        newCell1.textContent = (espressoDrinks[i].item);
         
         let newCell2 = newRow.insertCell();
         newCell2.setAttribute('class', 'menu-size');
-        let newText2 = document.createTextNode(espressoDrinks[i].price);
-        newCell2.appendChild(newText2);
+        newCell2.textContent = (espressoDrinks[i].price);
     };
 
     tableContainer.appendChild(espressoTable);
@@ -184,8 +157,7 @@ const generatePageOne = function() {
     const addOnHeaderRow = document.createElement('tr');
     
     const addOnHeader = document.createElement('th');
-    const addOnHeaderText = document.createTextNode('extras');
-    addOnHeader.appendChild(addOnHeaderText);
+    addOnHeader.textContent = ('extras');
 
    const addOnTable = document.createElement('table');
    addOnTable.setAttribute('id', 'addOnTable');
@@ -200,13 +172,11 @@ const generatePageOne = function() {
    
        let newCell1 = newRow.insertCell();
        newCell1.setAttribute('class', 'menu-item');
-       let newText1 = document.createTextNode(addOns[i].item);
-       newCell1.appendChild(newText1);
+       newCell1.textContent = (addOns[i].item);
        
        let newCell2 = newRow.insertCell();
        newCell2.setAttribute('class', 'menu-size');
-       let newText2 = document.createTextNode(addOns[i].price);
-       newCell2.appendChild(newText2);
+       newCell2.textContent = (addOns[i].price);
    };
 
    // append to containers
