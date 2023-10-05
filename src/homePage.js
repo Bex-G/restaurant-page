@@ -37,16 +37,17 @@ const generateHomePage = function () {
     foodButton.textContent = ('something to eat');
     buttonContainer.appendChild(foodButton);
 
-    const citation = document.createElement('div');
-    citation.setAttribute('id', 'citation');
-    citation.textContent = ('background by Stéphane Juban Unsplash | icon by juicy_fish on flaticon');
-
     homePage.appendChild(welcome);
     homePage.appendChild(logoContainer);
     homePage.appendChild(offer);
     homePage.appendChild(buttonContainer);
-    homePage.appendChild(citation);
+
+    const citation = document.createElement('div');
+    citation.setAttribute('class', 'citation');
+    citation.textContent = ('background by Stéphane Juban Unsplash + icon by juicy_fish on flaticon');
+
     content.appendChild(homePage);
+    content.appendChild(citation);
 };
 
 export default generateHomePage;

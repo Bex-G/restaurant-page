@@ -30,13 +30,19 @@ const generatePageOne = function() {
 
     const content = document.getElementById('content'); 
 
-    const parentContainer = document.createElement('div');
-    parentContainer.setAttribute('id', 'parentContainer');
+    const pageOne = document.createElement('div');
+    pageOne.setAttribute('id', 'pageOne');
 
-    const drinkMenu = document.createElement('h1');
-    drinkMenu.setAttribute('class', 'menu-name');
-    drinkMenu.textContent = 'LIBATIONS';
-    content.appendChild(drinkMenu);
+    const drinkMenuContainer = document.createElement('div');
+    drinkMenuContainer.setAttribute('id', 'drinkMenuContainer');
+
+    const headerContainer = document.createElement('div');
+    headerContainer.setAttribute('id', 'drinkHeader');
+    const drinkHeader = document.createElement('h1');
+    drinkHeader.setAttribute('class', 'menu-name');
+    drinkHeader.textContent = 'LIBATIONS';
+    headerContainer.appendChild(drinkHeader);
+    drinkMenuContainer.appendChild(headerContainer);
 
     const tableContainer = document.createElement('div');
     tableContainer.setAttribute('id', 'tableContainer')
@@ -49,7 +55,7 @@ const generatePageOne = function() {
     const hotHeaderRow = document.createElement('tr');
     
     const hotHeader = document.createElement('th');
-    hotHeader.textContent = ('served hot or iced');
+    hotHeader.textContent = ('hot or iced');
 
     const smallHotHeader = document.createElement('th');
     smallHotHeader.textContent = ('12 oz');
@@ -68,15 +74,15 @@ const generatePageOne = function() {
         newRow.setAttribute('class', 'row');
     
         let newCell1 = newRow.insertCell();
-        newCell1.setAttribute('class', 'menu-item');
+        newCell1.setAttribute('class', 'drink-item');
         newCell1.textContent = (hotDrinks[i].item);
         
         let newCell2 = newRow.insertCell();
-        newCell2.setAttribute('class', 'menu-size');
+        newCell2.setAttribute('class', 'drink-size');
         newCell2.textContent = (hotDrinks[i].small);
 
         let newCell3 = newRow.insertCell();
-        newCell3.setAttribute('class', 'menu-size');
+        newCell3.setAttribute('class', 'drink-size');
         newCell3.textContent = (hotDrinks[i].large);
     };
 
@@ -109,15 +115,15 @@ const generatePageOne = function() {
         newRow.setAttribute('class', 'row');
     
         let newCell1 = newRow.insertCell();
-        newCell1.setAttribute('class', 'menu-item');
+        newCell1.setAttribute('class', 'drink-item');
         newCell1.textContent = (icedDrinks[i].item);
         
         let newCell2 = newRow.insertCell();
-        newCell2.setAttribute('class', 'menu-size');
+        newCell2.setAttribute('class', 'drink-size');
         newCell2.textContent = (icedDrinks[i].small);
 
         let newCell3 = newRow.insertCell();
-        newCell3.setAttribute('class', 'menu-size');
+        newCell3.setAttribute('class', 'drink-size');
         newCell3.textContent = (icedDrinks[i].large);
     };
  
@@ -142,11 +148,11 @@ const generatePageOne = function() {
         newRow.setAttribute('class', 'row');
     
         let newCell1 = newRow.insertCell();
-        newCell1.setAttribute('class', 'menu-item');
+        newCell1.setAttribute('class', 'drink-item');
         newCell1.textContent = (espressoDrinks[i].item);
         
         let newCell2 = newRow.insertCell();
-        newCell2.setAttribute('class', 'menu-size');
+        newCell2.setAttribute('class', 'drink-size');
         newCell2.textContent = (espressoDrinks[i].price);
     };
 
@@ -171,19 +177,25 @@ const generatePageOne = function() {
        newRow.setAttribute('class', 'row');
    
        let newCell1 = newRow.insertCell();
-       newCell1.setAttribute('class', 'menu-item');
+       newCell1.setAttribute('class', 'drink-item');
        newCell1.textContent = (addOns[i].item);
        
        let newCell2 = newRow.insertCell();
-       newCell2.setAttribute('class', 'menu-size');
+       newCell2.setAttribute('class', 'drink-size');
        newCell2.textContent = (addOns[i].price);
    };
 
-   // append to containers
+    // append to containers
 
-   tableContainer.appendChild(addOnTable);
-   parentContainer.appendChild(tableContainer);
-   content.appendChild(parentContainer);
+    tableContainer.appendChild(addOnTable);
+    drinkMenuContainer.appendChild(tableContainer);
+    pageOne.appendChild(drinkMenuContainer);
+    content.appendChild(pageOne);
+
+    const citation = document.createElement('div');
+    citation.setAttribute('class', 'citation');
+    citation.textContent = ("image from https://www.enterthearcverse.com/post/101-d-d-tavern-ideas");
+    content.appendChild(citation);
 }
 
 export default generatePageOne;

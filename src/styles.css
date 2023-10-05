@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -14,18 +13,21 @@
 }
 
 body {
-    height: 100vh;
-    width: 100vw;
-    background-color: rgb(35, 35, 35);
     font-family: 'MyFont';
-    color: white;
-} 
+    background-color: black;
+}
+
+.menu-name {
+    font-size: 4rem;
+    text-align: center;
+    padding: 10px;
+}
 
 .citation {
     font-size: .8rem;
     text-align: center;
-    background-color: black;
     padding: 5px;
+    color: white;
 }
 
 /* homePage */
@@ -38,6 +40,8 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     text-align: center;
+    font-size: 2rem;
+    color: white;
 }
 
 #logoContainer  {
@@ -74,27 +78,27 @@ body {
 
 /* pageOne menu */
 
-.menu-name {
-    font-size: 4rem;
-    text-align: center;
-    padding: 20px;
+#pageOne {
+    display: flex;
+    justify-content: flex-end;
+    background-image: url(./drinkUp.jpg);
+    background-repeat: no-repeat;
+    font-size: 1.5rem;
 }
 
-#parentContainer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+#drinkMenuContainer {
+    background-color: rgb(243, 242, 228);
+    color: rgb(35, 35, 35);
+    height: 100%;
+    width: 60%;
 }
 
 #tableContainer {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: stretch;
-    gap: 50px;
-    padding: 20px;
-    border: 1px solid goldenrod;
-    margin-bottom: 20px;
-    width: 90%;
+    gap: 15px;
+    padding: 15px;
 }
 
 th {
@@ -103,25 +107,27 @@ th {
 }
 
 .row {
-    height: 50px;
+    height: 45px;
 }
 
-.menu-size {
+.drink-size {
     letter-spacing: .1rem;
 }
 
 /* pageTwo menu */
 
 #pageTwo {
-    display: flex;
-    height: 100%;
-    width: 100%;
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./tavern.jpg);
+    background-position: right;
 }
 
 #foodMenuContainer {
     background-color: rgb(243, 242, 228);
     color: rgb(35, 35, 35);
-    width: 60%;
+    height: 100%;
+    width: 50%;
 }
 
 #foodList {
@@ -146,12 +152,9 @@ th {
 .food-item {
     font-weight: bold;
     font-size: 2rem;
+    color: goldenrod;
 }
 
 .food-description, .food-price {
     font-size: 1.5rem;
-}
-
-#backgroundContainer img {
-    height: 100%;
 }

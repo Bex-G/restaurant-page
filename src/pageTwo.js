@@ -3,7 +3,7 @@ const food = [
     {item: "leafy green salad", description: "freshly forraged by a strange man in the woods", price: "4 copper"},
     {item: "countryman's platter", description: "a fine assortment of bread, cheese, nuts and fruits", price: "6 copper"},
     {item: "meat stew", description: "a hearty stew of roast beast and root vegetables", price: "1 silver"},
-    {item: "nutty butter cake", description: "a rich cake with candied nuts served and jam", price: "your figure"},
+    {item: "nutty butter cake", description: "a rich cake with candied nuts and jam", price: "your figure"},
 ];
 
 generatePageTwo = function() {
@@ -58,15 +58,7 @@ generatePageTwo = function() {
     };
 
     foodMenuContainer.appendChild(foodList);
-
-    const backgroundContainer = document.createElement('div');
-    const image = document.createElement('img');
-    image.src = '../src/tavern.jpg';
-    backgroundContainer.appendChild(image);
-    backgroundContainer.setAttribute('id', 'backgroundContainer');
-    
     pageTwo.appendChild(foodMenuContainer);
-    pageTwo.appendChild(backgroundContainer);
     content.appendChild(pageTwo);
 
     const citation = document.createElement('div');
