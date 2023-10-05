@@ -19,10 +19,19 @@ body {
     background-color: rgb(35, 35, 35);
     font-family: 'MyFont';
     color: white;
-    font-size: 2rem;
 } 
 
 /* homePage */
+
+#homePage {
+    height: 100vh;
+    width: 100vw;
+    background-image: url(./hearth.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-align: center;
+}
 
 #logoContainer  {
     display: flex;
@@ -34,16 +43,6 @@ body {
 #icon {
     height: 100px;
     filter: invert(100%);
-}
-
-#homePage {
-    height: 100vh;
-    width: 100vw;
-    background-image: url(./hearth.jpg);
-    background-size: cover;
-    background-repeat: no-repeat;
-    background-position: center;
-    text-align: center;
 }
 
 #welcome {
@@ -66,17 +65,19 @@ body {
     background-color: goldenrod;
 }
 
-#citation {
-    position: absolute;
+.citation {
+    position: relative;
     bottom: 0;
     font-size: .8rem;
-    width: 100%;
+    text-align: center;
     background-color: black;
+    padding: 5px;
 }
 
 /* pageOne menu */
 
 .menu-name {
+    font-size: 4rem;
     text-align: center;
     padding: 20px;
 }
@@ -109,4 +110,50 @@ th {
 
 .menu-size {
     letter-spacing: .1rem;
+}
+
+/* pageTwo menu */
+
+#pageTwo {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+#foodMenuContainer {
+    background-color: rgb(243, 242, 228);
+    color: rgb(35, 35, 35);
+    width: 60%;
+}
+
+#foodList {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-columns: 3fr 1fr;
+    grid-template-rows: repeat(5, 1fr);
+    row-gap: 20px;
+    align-items: center;
+    padding: 15px;
+    margin-top: 25px;
+}
+
+.menu-left {
+    grid-column: 1 / 2;
+}
+
+.menu-right {
+    grid-column: 2 / 3;
+}
+
+.food-item {
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.food-description, .food-price {
+    font-size: 1.5rem;
+}
+
+#backgroundContainer img {
+    height: 100%;
 }
