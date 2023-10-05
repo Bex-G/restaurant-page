@@ -67,6 +67,10 @@ generatePageTwo = function() {
     
     pageTwo.appendChild(foodMenuContainer);
     pageTwo.appendChild(backgroundContainer);
-
     content.appendChild(pageTwo);
+
+    const citation = document.createElement('div');
+    citation.setAttribute('class', 'citation');
+    citation.textContent = ("image from https://www.diceanddragons.com/post/a-feast-for-adventurers-the-100-fantastical-foods-you-can-order-from-a-tavern");
+    content.appendChild(citation);
 };
