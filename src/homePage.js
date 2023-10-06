@@ -1,3 +1,6 @@
+import drinkPage from "./pageOne";
+import foodPage from "./pageTwo";
+
 const generateHomePage = function () {
 
     const content = document.getElementById('content');
@@ -14,7 +17,6 @@ const generateHomePage = function () {
     logoContainer.appendChild(text1); 
     const icon = document.createElement('img');
     icon.src  = '../src/icon.png';
-    icon.setAttribute('id', 'icon');
     logoContainer.appendChild(icon);
     const text2 = document.createTextNode ('at Café');
     logoContainer.appendChild(text2);
@@ -29,12 +31,19 @@ const generateHomePage = function () {
     const drinkButton = document.createElement('button');
     drinkButton.setAttribute('class', 'menuButton');
     drinkButton.textContent = ('something to drink');
-
+    drinkButton.addEventListener('click', () => {
+    content.removeChild(homePage);
+    content.removeChild(citation);
+    drinkPage()});
     buttonContainer.appendChild(drinkButton);
 
     const foodButton = document.createElement('button');
     foodButton.setAttribute('class', 'menuButton');
     foodButton.textContent = ('something to eat');
+    foodButton.addEventListener('click', () => {
+        content.removeChild(homePage);
+        content.removeChild(citation);
+        foodPage()});
     buttonContainer.appendChild(foodButton);
 
     homePage.appendChild(welcome);

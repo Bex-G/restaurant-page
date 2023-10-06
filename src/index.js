@@ -1,3 +1,3 @@
-import generatePageOne from './pageOne';
+import generateHomePage from './homePage';
 
-generatePageOne();
+generateHomePage();

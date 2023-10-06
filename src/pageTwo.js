@@ -1,3 +1,5 @@
+import drinkPage from "./pageOne";
+
 const food = [
     {item: "stuffed eggs", description: "prepared in the style of the devil", price: "1 firstborn"},
     {item: "leafy green salad", description: "freshly forraged by a strange man in the woods", price: "4 copper"},
@@ -6,7 +8,7 @@ const food = [
     {item: "nutty butter cake", description: "a rich cake with candied nuts and jam", price: "your figure"},
 ];
 
-generatePageTwo = function() {
+const foodPage = function() {
 
     const content = document.getElementById('content');
     const pageTwo = document.createElement('div');
@@ -15,8 +17,33 @@ generatePageTwo = function() {
     const foodMenuContainer = document.createElement('div');
     foodMenuContainer.setAttribute('id', 'foodMenuContainer');
 
+    const tabContainer = document.createElement('div');
+    tabContainer.setAttribute('id', 'tabContainer');
+
+    const drinkTab = document.createElement('button');
+    drinkTab.setAttribute('class', 'tabs');
+    drinkTab.textContent = ('drink')
+    drinkTab.addEventListener('click', () => {
+        content.removeChild(pageTwo);
+        content.removeChild(citation);
+        drinkPage()});
+
+    const foodTab = document.createElement('button');
+    foodTab.setAttribute('class', 'tabs');
+    foodTab.textContent = ('food');
+
+    tabContainer.appendChild(drinkTab);
+    tabContainer.appendChild(foodTab);
+    foodMenuContainer.appendChild(tabContainer);
+
     const headerContainer = document.createElement('div');
-    headerContainer.setAttribute('id', 'foodHeader');
+    headerContainer.setAttribute('class', 'header-container');
+
+    const icon = document.createElement('img');
+    icon.src  = '../src/icon.png';
+    icon.setAttribute('id', 'icon');
+    headerContainer.appendChild(icon);
+
     const foodHeader = document.createElement('h1');
     foodHeader.setAttribute('class', 'menu-name');
     foodHeader.textContent = 'PROVISIONS';
@@ -66,3 +93,5 @@ generatePageTwo = function() {
     citation.textContent = ("image from https://www.diceanddragons.com/post/a-feast-for-adventurers-the-100-fantastical-foods-you-can-order-from-a-tavern");
     content.appendChild(citation);
 };
+
+export default foodPage;
