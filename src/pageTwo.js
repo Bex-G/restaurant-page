@@ -21,6 +21,7 @@ const foodPage = function() {
     tabContainer.setAttribute('id', 'tabContainer');
 
     const drinkTab = document.createElement('button');
+    drinkTab.setAttribute('id', 'inactiveTab');
     drinkTab.setAttribute('class', 'tabs');
     drinkTab.textContent = ('drink')
     drinkTab.addEventListener('click', () => {
@@ -29,6 +30,7 @@ const foodPage = function() {
         drinkPage()});
 
     const foodTab = document.createElement('button');
+    foodTab.setAttribute('id', 'activeTab');
     foodTab.setAttribute('class', 'tabs');
     foodTab.textContent = ('food');
 

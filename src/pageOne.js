@@ -42,10 +42,12 @@ const drinkPage = function() {
     tabContainer.setAttribute('id', 'tabContainer');
 
     const drinkTab = document.createElement('button');
+    drinkTab.setAttribute('id', 'activeTab');
     drinkTab.setAttribute('class', 'tabs');
     drinkTab.textContent = ('drink')
 
     const foodTab = document.createElement('button');
+    foodTab.setAttribute('id', 'inactiveTab');
     foodTab.setAttribute('class', 'tabs');
     foodTab.textContent = ('food');
     foodTab.addEventListener('click', () => {
