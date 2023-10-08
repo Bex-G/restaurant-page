@@ -56,6 +56,10 @@ body {
     background-color: rgb(215, 215, 205);
 }
 
+button {
+    cursor: pointer;
+}
+
 .citation {
     font-size: .8rem;
     text-align: center;
