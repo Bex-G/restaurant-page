@@ -1,1 +1,1 @@
-# restaurant-page
+This project was primarily an exercise in naviagting webpack and using DOM manipulation and ES6 modules to dynamically render a simple restaurant website.
