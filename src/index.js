@@ -1,3 +1,4 @@
-import generateHomePage from './homePage';
+import "./styles.css";
+import generateHomePage from "./homePage";
 
 generateHomePage();
