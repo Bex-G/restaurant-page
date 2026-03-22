@@ -1,4 +1,4 @@
 import "./styles.css";
-import generateHomePage from "./homePage";
+import generateHomePage from "./home";
 
 generateHomePage();
